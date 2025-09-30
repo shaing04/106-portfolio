@@ -7,11 +7,20 @@
 </head>
 <body>
     <h1>Contact</h1>
+    <form action="mailto:shaing@ucsd.edu" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" required></textarea>
+        <button type="submit">Send</button>
+    </form>
     <nav>
         <ol>
-            <li><a href="https://shaing04.github.io/106-portfolio/">Home</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="../contact/index.html">Contact</a></li>
+            <li><a href="https://shaing04.github.io/106-portfolio/" target="_blank">Home</a></li>
+            <li><a href="../projects/index.html" target="_blank">Projects</a></li>
+            <li><a href="../contact/index.html" target="_blank">Contact</a></li>
         </ol>
     </nav>
 </body>
