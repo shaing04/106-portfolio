@@ -1,5 +1,5 @@
 h1 {
-  color: black;
+  color: red;
   
   
 }
@@ -9,7 +9,7 @@ body {
 	   and use the OS’s UI font as the website font
 	 */
   font: 100%/1.5 system-ui;
-  max-width: 150ch;
+  max-width: 100ch;
 
   
 }
