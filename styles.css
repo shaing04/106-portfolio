@@ -1,5 +1,5 @@
 h1 {
-  color: pink;
+  color: blue;
   
   
 }
@@ -11,6 +11,6 @@ body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
   margin-inline: auto;
-
+  padding: 15px; 
   
 }
