@@ -1,3 +1,14 @@
+
+
+html { 
+      :root {
+      --color-accent: #8997D6; /* Defining the custom property */
+    }
+    accent-color: var(--color-accent);
+
+    background-color: oklch(from var(--color-accent) 95% 5% h)
+}
+
 h1 {
   color: green;
   
