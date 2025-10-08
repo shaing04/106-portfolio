@@ -1,5 +1,5 @@
 h1 {
-  color: blue;
+  color: green;
   
   
 }
@@ -14,6 +14,11 @@ ul {
 a.current { 
   display: flex;
   flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 10px;
 }
 
 body {
