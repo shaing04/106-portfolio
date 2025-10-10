@@ -1,10 +1,13 @@
 
 
-html { 
-      :root {
+:root {
       --color-accent: #667de3; /* Defining the custom property */
     }
+
+html { 
     accent-color: var(--color-accent);
+
+     background-color: white;
 }
 
 h1 {
@@ -13,11 +16,13 @@ h1 {
 }
 
 ul {
-  display: contents; 
-  li {
-    display: contents;
-  }
+  display: contents;
 }
+
+ul li {
+  display: contents;
+}
+
 
 nav {
   display: flex;
@@ -43,8 +48,9 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   color: var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h)
+  background-color: hsl(230, 60%, 95%); /* light background with similar hue */
 }
+
 
 
 body {
