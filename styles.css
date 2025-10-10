@@ -22,7 +22,11 @@ ul {
   }
 }
 
-a.current { 
+nav { 
+  display: flex;
+}
+
+nav a { 
   display: flex;
   flex: 1;
   text-decoration: none;
@@ -31,6 +35,8 @@ a.current {
   padding: 0.5em;
   margin-bottom: 10px;
 }
+
+
 
 body {
   /* Set line height to 1.5 times the font size
