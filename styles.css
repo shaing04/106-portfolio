@@ -11,9 +11,8 @@ html {
 }
 
 h1 {
-  color: rgb(16, 227, 44);
+  color: rgb(227, 16, 76);
 
-  
 }
 
 ul {
@@ -62,24 +61,26 @@ form textarea {
 }
 
 form label { 
-  display: block; 
+  display: grid; 
+  display: contents;
   margin-block: 0.5em;
 }
 
 form input { 
-  display: block; 
+  display: grid; 
+  display: contents; 
   width: 100%;
   box-sizing: border-box;
 }
 
 form textarea { 
-  display: block; 
+  display: grid; 
   width: 100%;
   box-sizing: border-box;
 }
 
 form button {
-  display: block;
+  display: grid;
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
