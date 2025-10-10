@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(16, 227, 118);
+  color: rgb(227, 90, 16);
 
 }
 
@@ -37,7 +37,6 @@ nav a {
   text-align: center;
   padding: 0.5em;
   border-bottom: 1px solid transparent; /* invisible but keeps layout consistent */
-  transition: border-bottom 0.2s ease, color 0.2s ease;
 }
 
 nav a.current {
