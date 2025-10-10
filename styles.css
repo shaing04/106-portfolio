@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(16, 174, 227);
+  color: rgb(33, 227, 16);
 
 }
 
@@ -51,39 +51,37 @@ nav a:hover {
   background-color: hsl(230, 60%, 95%); /* light background with similar hue */
 }
 
-form { 
-  font: inherit; 
-  display: grid; 
-  grid-template-columns: auto 1fr;
-  gap: 0.75 1em; 
-  align-items: center; 
+/* Use CSS Grid for the form layout */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr; /* labels on left (auto), inputs on right (fill remaining space) */
+  gap: 0.75em 1em; /* row gap, column gap */
+  align-items: center; /* vertically center labels and inputs */
+  max-width: 600px; /* optional: prevent form from stretching too wide */
 }
 
-form label { 
-  font: inherit;
+/* Align labels to the right edge of their column */
+form label {
   text-align: right;
+  font-weight: 600;
 }
 
-form textarea { 
-  font: inherit; 
-  box-sizing: border-box;
-  width: 100%
-}
-
-form input { 
-  font: inherit; 
-  box-sizing: border-box;
-  width: 100%
-}
-
-form button {
-  grid-column: 1 / -1;
-  margin-top: 1em;
+/* Make inputs and textarea take full width within their column */
+form input,
+form textarea {
   width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+/* Make the button span both columns */
+form button {
+  grid-column: 1 / -1; /* spans from first to last column */
+  justify-self: start; /* align button to the left (you could also use center or end) */
+  margin-top: 1em;
+  font: inherit;
   cursor: pointer;
 }
-
-
 
 
 
