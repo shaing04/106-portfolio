@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(227, 90, 16);
+  color: rgb(79, 16, 227);
 
 }
 
@@ -35,8 +35,9 @@ nav a {
   text-decoration: none;
   color: inherit;
   text-align: center;
-  padding: 0.5em;
-  border-bottom: 1px solid transparent; /* invisible but keeps layout consistent */
+  padding: 0.5em 0;
+  border-bottom: 0.4em solid transparent; /* reserve space for hover/current */
+  transition: none;
 }
 
 nav a.current {
