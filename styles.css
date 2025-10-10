@@ -10,9 +10,8 @@ html {
 }
 
 h1 {
-  color: rgb(143, 16, 227);
-  
-  
+  color: rgb(16, 227, 79);
+
 }
 
 ul {
@@ -31,12 +30,16 @@ nav {
 }
 
 nav a { 
-  display: flex;
   flex: 1;
   text-decoration: none;
   color: inherit;
   text-align: center;
   padding: 0.5em;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em;
 }
 
 a:hover { 
