@@ -10,7 +10,7 @@ html {
 }
 
 h1 {
-  color: rgb(187, 133, 224);
+  color: rgb(143, 16, 227);
   
   
 }
@@ -24,6 +24,10 @@ ul {
 
 nav { 
   display: flex;
+  margin-bottom: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid; 
+  border-bottom-color: oklch(80% 3% 200);
 }
 
 nav a { 
@@ -33,7 +37,11 @@ nav a {
   color: inherit;
   text-align: center;
   padding: 0.5em;
-  margin-bottom: 10px;
+}
+
+a:hover { 
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+  color: --color-accent;
 }
 
 
