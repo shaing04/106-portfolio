@@ -2,11 +2,9 @@
 
 html { 
       :root {
-      --color-accent: #8997D6; /* Defining the custom property */
+      --color-accent: #667de3; /* Defining the custom property */
     }
     accent-color: var(--color-accent);
-
-    background-color: oklch(from var(--color-accent) 95% 5% h)
 }
 
 h1 {
@@ -19,9 +17,6 @@ ul {
   li {
     display: contents;
   }
-}
-:root {
-  --color-accent: oklch(65% 50% 0);
 }
 
 nav {
@@ -46,6 +41,7 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   color: var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h)
 }
 
 
