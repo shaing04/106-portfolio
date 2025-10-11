@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(227, 16, 171);
+  color: rgb(16, 111, 227);
 
 }
 
@@ -103,6 +103,7 @@ form button {
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   min-width: 15em;
   max-width: 1fr;
+  margin: 1px;
 }
 
 body {
