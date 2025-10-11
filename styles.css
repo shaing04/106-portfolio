@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(218, 89, 89);
+  color: rgb(89, 192, 218);
 
 }
 
@@ -98,16 +98,28 @@ form button {
 }
 
 
-.projects { 
-  display:grid; 
+.projects {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  min-width: 15em;
-  max-width: 1fr;
-  margin: 1px;
+  gap: 1em; /* space between articles */
+  margin: 1em 0;
 }
 
-div article { 
-  margin: 1px; 
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3; /* ensures each article spans 3 rows in the main grid */
+  gap: 0.5em;       /* space between elements inside article */
+}
+
+.projects article h2 {
+  margin: 0;        /* remove extra spacing from headings */
+}
+
+.projects article img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
