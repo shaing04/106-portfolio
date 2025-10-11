@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(26, 16, 227);
+  color: rgb(218, 89, 89);
 
 }
 
@@ -109,7 +109,6 @@ form button {
 div article { 
   margin: 1px; 
 }
-
 
 body {
   /* Set line height to 1.5 times the font size
