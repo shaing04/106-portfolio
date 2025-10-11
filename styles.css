@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(151, 244, 235);
+  color: rgb(162, 244, 151);
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
@@ -150,14 +150,9 @@ form button {
   margin-bottom: 0.5em;
 }
 
-.work h2, h3 { 
+.work, .education h2, h3 { 
   font-weight: bold;
 }
-.education article {
-  padding-left: 1.5em;
-}
-
-
 
 
 
