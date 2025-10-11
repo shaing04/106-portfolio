@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(151, 174, 244);
+  color: rgb(0, 0, 0);
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
@@ -130,10 +130,18 @@ form button {
   display: block;
 }
 
+.header-info, .education, .work { 
+  margin-bottom: 1em;
+}
+
 .work, .education { 
   display: grid; 
   grid-template-columns: 1fr;
   gap: 0.5em;
+}
+
+.work, .education h2, h3 { 
+  font-weight: bold;
 }
 
 .work article ul {
