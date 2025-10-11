@@ -11,9 +11,20 @@ html {
 }
 
 h1 {
-  color: rgb(89, 192, 218);
-
+  color: rgb(0, 0, 0);
+  font-size: 4em;      
+  line-height: 1.1;    
+  text-wrap: balance;  
+  margin: 0.5em 0;     
 }
+
+h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0.5em 0;
+  font-weight: inherit;
+}
+
 
 ul {
   display: contents;
