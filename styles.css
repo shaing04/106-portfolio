@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(0, 0, 0);
+  color: rgb(84, 207, 138);
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
@@ -119,8 +119,8 @@ form button {
 .projects article {
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 3; /* ensures each article spans 3 rows in the main grid */
-  gap: 0.5em;       /* space between elements inside article */
+  grid-row: span 3; 
+  gap: 0.5em;      
 }
 
 .projects article h2 {
@@ -132,6 +132,42 @@ form button {
   height: auto;
   display: block;
 }
+
+.education { 
+  display: grid; 
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+
+}
+
+.work { 
+  display: grid; 
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+}
+
+.work article ul {
+  display: block;
+  list-style-type: disc;
+  padding-left: 1.5em; 
+}
+
+.proj-temp-1 ul { 
+  display: block;
+  list-style-type: disc;
+  padding-left: 1.5em; 
+}
+
+.proj-temp-2 ul { 
+  display: block;
+  list-style-type: disc;
+  padding-left: 1.5em; 
+}
+
+
+
+
+
 
 body {
   /* Set line height to 1.5 times the font size
