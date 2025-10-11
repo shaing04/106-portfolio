@@ -25,11 +25,9 @@ h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
 
-
 ul {
   display: contents;
 }
-
 
 ul li {
   display: contents;
@@ -108,7 +106,6 @@ form button {
   }
 }
 
-
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -151,8 +148,6 @@ form button {
   margin-bottom: 0.5em;
   font-weight: normal;
 }
-
-
 
 body {
   /* Set line height to 1.5 times the font size
