@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(87, 18, 18);
+  color: rgb(0, 0, 0);
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
@@ -143,7 +143,7 @@ form button {
   gap: 0.5em;
 }
 
-.work, .education h2, h3 { 
+.work, .education h2, h3, h4 { 
   font-weight: bold;
 }
 
