@@ -134,6 +134,10 @@ form button {
   margin-bottom: 1em;
 }
 
+.education, .work { 
+  margin-top: 2em;
+}
+
 .work, .education { 
   grid-template-columns: 1fr;
   gap: 0.5em;
