@@ -11,7 +11,7 @@ html {
 }
 
 h1 {
-  color: rgb(236, 151, 244);
+  color: rgb(151, 244, 235);
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
@@ -133,14 +133,7 @@ form button {
   display: block;
 }
 
-.education { 
-  display: grid; 
-  grid-template-columns: 1fr;
-  gap: 0.5em;
-
-}
-
-.work { 
+.work, .education { 
   display: grid; 
   grid-template-columns: 1fr;
   gap: 0.5em;
@@ -160,13 +153,6 @@ form button {
 .work h2, h3 { 
   font-weight: bold;
 }
-
-.proj-temp-1, .proj-temp-2 ul { 
-  display: block;
-  list-style-type: disc;
-  padding-left: 1.5em; 
-}
-
 .education article {
   padding-left: 1.5em;
 }
