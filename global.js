@@ -12,3 +12,8 @@ let currentLink = navLinks.find(
 );
 
 currentLink?.classList.add("current");
+
+
+console.log(location.pathname);
+console.log(navLinks.map(a => a.pathname));
+
