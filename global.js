@@ -1,11 +1,11 @@
 // global.js
-console.log('js test 1');
+console.log('js test 2');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-const navLinks = $$("nav a").filter(a => a.target == "_blank");
+const navLinks = $$("nav a").filter(a => a.target !== "_blank");
 
 let currentLink = navLinks.find(
   (a) => a.host === location.host && a.pathname === location.pathname,
