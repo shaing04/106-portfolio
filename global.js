@@ -1,5 +1,5 @@
 // global.js
-console.log('js test 2');
+console.log('js test 3');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -17,7 +17,7 @@ function $$(selector, context = document) {
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
-  : "/website/";         // GitHub Pages repo name
+  : "/106-portfolio/";         // GitHub Pages repo name
 
 let pages = [
   { url: '', title: 'Home' },
