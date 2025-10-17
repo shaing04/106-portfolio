@@ -1,5 +1,5 @@
 // global.js
-console.log('js test mode button 2');
+console.log('js test mode button 3');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -61,7 +61,7 @@ document.body.insertAdjacentHTML(
   `
 	<label class="color-scheme">
 		Theme:
-		<select>
+		<select id = 'color-scheme'>
 			<option value = 'light dark' selected>Automatic</option>
       <option value = 'light'>Light</option>
       <option value = 'dark'>Dark</option>
