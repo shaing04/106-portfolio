@@ -1,5 +1,5 @@
 // global.js
-console.log('js test new nav bar');
+console.log('js test 1');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
