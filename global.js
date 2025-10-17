@@ -1,5 +1,5 @@
 // global.js
-console.log('js test 3');
+console.log('js test 4');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -36,6 +36,9 @@ for (let p of pages) {
 
   url = !url.startsWith('http') ? BASE_PATH + url : url;
 
-  nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+  let a = document.createElement('a');
+  a.href = url;
+  a.textContent = title;
+  nav.append(a);
 }
 
