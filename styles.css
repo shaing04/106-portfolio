@@ -48,7 +48,7 @@ nav a {
   color: inherit;
   text-align: center;
   padding: 0.5em 0;
-  border-bottom: 0.4em solid var(--color-accent); 
+  border-bottom: 0.4em solid transparent; 
   transition: none;
 }
 
@@ -60,10 +60,10 @@ nav a.current {
 }
 
 nav a:hover {
-  border-bottom: 0.4em solid var(--border-accent);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  border-bottom: 0.4em solid var(--color-accent);
   color: var(--color-accent);
   /*background-color: hsl(230, 60%, 95%); /* light background with similar hue */
-  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 form {
