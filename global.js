@@ -1,5 +1,5 @@
 // global.js
-console.log('js test mode button save');
+console.log('js test mode button save 2');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -82,11 +82,12 @@ if ("colorScheme" in localStorage) {
 }
 
 select.addEventListener('input', function (event) {
-  console.log('color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-  localStorage.colorScheme = event.target.value
+  const value = event.target.value;
+  console.log('color scheme changed to', value);
+  document.documentElement.style.setProperty('color-scheme', value);
+  localStorage.colorScheme = value
 
-  if (event.target.value === 'auto') { 
+  if (value === 'auto') { 
     document.documentElement.style.colorScheme = 'light dark';
 
   }
