@@ -1,5 +1,5 @@
 // global.js
-console.log('js test 10');
+console.log('js test mode button');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -56,4 +56,19 @@ for (let p of pages) {
   nav.append(a);
 }
 
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+	<label class="color-scheme">
+		Theme:
+		<select>
+			<option value = 'light dark' selected>Automatic</option>
+      <option value = 'light'>Light</option>
+      <option value = 'dark'>Dark</option>
+		</select>
+	</label>`,
+);
 
+select.addEventListener('input', function (event) {
+  console.log('color scheme changed to', event.target.value);
+});
