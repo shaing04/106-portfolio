@@ -1,13 +1,16 @@
 
 
 :root {
-      --color-accent: #667de3; /* Defining the custom property */
+  --color-accent: #667de3; /* Defining the custom property */
+      
+  --border-color: oklch(50% 10% 200 / 40%);
     }
 
 html { 
-    accent-color: var(--color-accent);
+  accent-color: var(--color-accent);
 
-     background-color: white;
+  background-color: white;
+  color-scheme: light dark;
 }
 
 h1 {
@@ -36,7 +39,8 @@ ul li {
 nav {
   display: flex;
   margin-bottom: 10px;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid;
+  border-bottom-color: var(--border-color);
 }
 
 nav a {
@@ -50,13 +54,14 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid;
   padding-bottom: 0.1em;
   font-weight: bold;
+  border-bottom-color: var(--border-color);
 }
 
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent);
+  border-bottom: 0.4em solid var(--border-accent);
   color: var(--color-accent);
   background-color: hsl(230, 60%, 95%); /* light background with similar hue */
 }
