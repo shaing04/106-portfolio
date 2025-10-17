@@ -1,5 +1,5 @@
 // global.js
-console.log('js test mode button');
+console.log('js test mode button 2');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -68,6 +68,8 @@ document.body.insertAdjacentHTML(
 		</select>
 	</label>`,
 );
+
+const select = document.querySelector('#color-scheme');
 
 select.addEventListener('input', function (event) {
   console.log('color scheme changed to', event.target.value);
