@@ -1,5 +1,5 @@
 // global.js
-console.log('js test 5');
+console.log('js test 6');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -44,6 +44,12 @@ for (let p of pages) {
 
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
+  }
+  a.target = "_blank";  
+
+  if (a.host !== location.host) {
+    a.target = "_blank";            // open in new tab
+    a.rel = "noopener noreferrer";  // security best practice
   }
 
   nav.append(a);
