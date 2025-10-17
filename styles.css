@@ -169,9 +169,10 @@ label {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  bottom: 1rem;
   font-family: inherit; 
   font-size: 80%; 
-  
+
 }
 
 body {

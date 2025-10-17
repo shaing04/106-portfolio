@@ -1,5 +1,5 @@
 // global.js
-console.log('js test mode button 3');
+console.log('js test mode button save');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -71,6 +71,27 @@ document.body.insertAdjacentHTML(
 
 const select = document.querySelector('#color-scheme');
 
+if ("colorScheme" in localStorage) {
+  const savedScheme = localStorage.colorScheme;
+  select.value = savedScheme;
+  if (savedScheme === "auto") {
+    document.documentElement.style.colorScheme = "light dark";
+  } else {
+    document.documentElement.style.colorScheme = savedScheme;
+  }
+}
+
 select.addEventListener('input', function (event) {
   console.log('color scheme changed to', event.target.value);
+  document.documentElement.style.setProperty('color-scheme', event.target.value);
+  localStorage.colorScheme = event.target.value
+
+  if (event.target.value === 'auto') { 
+    document.documentElement.style.colorScheme = 'light dark';
+
+  }
+  else { 
+    document.documentElement.style.colorScheme = value;
+  }
 });
+
