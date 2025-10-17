@@ -1,5 +1,5 @@
 // global.js
-console.log('js test contact form 2')
+console.log('js test contact form 3')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
