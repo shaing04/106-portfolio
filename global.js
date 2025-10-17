@@ -1,5 +1,5 @@
 // global.js
-console.log('js test mode button save 2');
+console.log('js test contact form')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -96,3 +96,21 @@ select.addEventListener('input', function (event) {
   }
 });
 
+const form = document.querySelector('form');
+
+form?.addEventListener('submit', function (event) {
+  event.preventDefault(); // prevent default submission
+
+  const data = new FormData(form);
+  let url = form.action + '?';
+  const params = [];
+
+  for (let [name, value] of data) {
+    params.push(`${name}=${encodeURIComponent(value)}`);
+  }
+
+  url += params.join('&');
+
+  console.log('Opening:', url);
+  location.href = url; 
+});
