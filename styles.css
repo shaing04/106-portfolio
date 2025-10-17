@@ -1,20 +1,19 @@
 
 
 :root {
-  --color-accent: #667de3; /* Defining the custom property */
-      
+  --color-accent: #667de3;
   --border-color: oklch(50% 10% 200 / 40%);
     }
 
 html { 
+  color-scheme: light dark;     
   accent-color: var(--color-accent);
-
-  background-color: white;
-  color-scheme: light dark;
+  background-color: canvas;    
+  color: canvastext; 
 }
 
 h1 {
-  color: rgb(0, 0, 0);
+  color: canvastext;
   font-size: 4em;      
   line-height: 1.1;    
   text-wrap: balance;  
