@@ -42,14 +42,15 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
+  // highlight current page
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
-  a.target = "_blank";  
 
+  // open external links in a new tab
   if (a.host !== location.host) {
-    a.target = "_blank";            // open in new tab
-    a.rel = "noopener noreferrer";  // security best practice
+    a.target = "_blank";            
+    a.rel = "noopener noreferrer";  
   }
 
   nav.append(a);
