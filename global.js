@@ -1,5 +1,5 @@
 // global.js
-console.log('js test 4');
+console.log('js test 5');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -24,6 +24,8 @@ let pages = [
   { url: 'projects/', title: 'Projects' },
   { url: 'resume/', title: 'Resume'},
   { url: 'contact/', title: 'Contact'}, 
+  { url: 'https://github.com/shaing04', title: 'GitHub'},
+  { url: 'https://www.linkedin.com/in/susana-haing/', title: 'LinkedIn'}
   // add the rest of your pages here
 ];
 
@@ -39,6 +41,12 @@ for (let p of pages) {
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
+
+  if (a.host === location.host && a.pathname === location.pathname) {
+    a.classList.add('current');
+  }
+
   nav.append(a);
 }
+
 
