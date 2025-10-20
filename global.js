@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 1')
+console.log('js 2 test 2')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -20,10 +20,13 @@ export async function fetchJSON(url) {
     // Fetch the JSON file from the given URL
     const response = await fetch(url);
     if (!response.ok) {
-  throw new Error(`Failed to fetch projects: ${response.statusText}`);
-}
+      console.log('Error 1')
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      
+    }
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
+    console.log('Error 2')
   }
 }
 
