@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 2')
+console.log('js 2 test 3')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -17,18 +17,18 @@ function $$(selector, context = document) {
 
 export async function fetchJSON(url) {
   try {
-    // Fetch the JSON file from the given URL
     const response = await fetch(url);
+
     if (!response.ok) {
-      console.log('Error 1')
       throw new Error(`Failed to fetch projects: ${response.statusText}`);
-      
     }
+
+    console.log(response); 
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
-    console.log('Error 2')
   }
 }
+
 
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
