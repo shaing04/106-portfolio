@@ -1,5 +1,5 @@
 // global.js
-console.log('js test contact form 3')
+console.log('js 2 test 1')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -14,6 +14,19 @@ function $$(selector, context = document) {
 // });
 
 // currentLink?.classList.add("current");
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+  throw new Error(`Failed to fetch projects: ${response.statusText}`);
+}
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
