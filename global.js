@@ -66,7 +66,7 @@ const title = document.querySelector('.projects-title');
 fetchJSON('../lib/projects.json').then((projects) => {
   renderProjects(projects, container);
   if (title) {
-    title.textContent = `Projects (${projects.length})`;
+    title.textContent = `(${projects.length}) Projects`;
   }
 });
 
