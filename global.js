@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 6')
+console.log('js 2 test 7')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -58,6 +58,13 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     containerElement.appendChild(article);
   });
 }
+
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
+
+}
+
 
 
 const container = document.querySelector('.projects');
