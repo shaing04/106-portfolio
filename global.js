@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 3')
+console.log('js 2 test 4')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -23,11 +23,14 @@ export async function fetchJSON(url) {
       throw new Error(`Failed to fetch projects: ${response.statusText}`);
     }
 
-    console.log(response); 
+    const data = await response.json();
+    console.log('Fetched data:', data);
+    return data;
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
+
 
 
 
@@ -128,3 +131,5 @@ form?.addEventListener('submit', function (event) {
   console.log('Opening:', url);
   location.href = url;
 });
+
+fetchJSON('./lib/projects.json');
