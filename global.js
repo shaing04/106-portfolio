@@ -59,6 +59,17 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   });
 }
 
+import { fetchJSON, renderProjects } from './global.js';
+
+const container = document.querySelector('.projects');
+const title = document.querySelector('.projects-title');
+
+fetchJSON('./lib/projects.json').then((projects) => {
+  renderProjects(projects, container);
+  if (title) {
+    title.textContent = `Projects (${projects.length})`;
+  }
+});
 
 
 
