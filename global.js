@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 4')
+console.log('js 2 test 5')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -29,6 +29,34 @@ export async function fetchJSON(url) {
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
   }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // heading levels
+  const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!headings.includes(headingLevel)) {
+    console.warn(`Invalid heading level "${headingLevel}". Defaulting to h2.`);
+    headingLevel = 'h2';
+  }
+
+  containerElement.innerHTML = '';
+
+  projects.forEach((project) => {
+    const article = document.createElement('article');
+
+    const heading = document.createElement(headingLevel);
+    const img = document.createElement('img');
+    const p = document.createElement('p');
+
+    heading.textContent = project.title;
+    img.src = project.image || '';
+    img.alt = project.title || 'Project image';
+    p.textContent = project.description || '';
+
+    article.append(heading, img, p);
+
+    containerElement.appendChild(article);
+  });
 }
 
 
@@ -132,4 +160,4 @@ form?.addEventListener('submit', function (event) {
   location.href = url;
 });
 
-fetchJSON('./lib/projects.json');
+//fetchJSON('./lib/projects.json');
