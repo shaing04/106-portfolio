@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 8')
+console.log('js 2 test 9')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
