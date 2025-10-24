@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 9')
+console.log('js 2 test 10')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -14,6 +14,11 @@ function $$(selector, context = document) {
 // });
 
 // currentLink?.classList.add("current");
+
+export const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+  ? "/"                  // Local server
+  : "/106-portfolio/";         // GitHub Pages repo name
+
 
 export async function fetchJSON(url) {
   try {
@@ -77,11 +82,6 @@ fetchJSON(`${BASE_PATH}lib/projects.json`).then((projects) => {
   }
 });
 
-
-
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"                  // Local server
-  : "/106-portfolio/";         // GitHub Pages repo name
 
 let pages = [
   { url: '', title: 'Home' },
