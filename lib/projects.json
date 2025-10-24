@@ -1,63 +1,73 @@
 [
     {
-        "title": "Song Sentiment & Student Stress Levels Research Design\n                September 2024 - December 2024\n            ",
+        "title": "Song Sentiment & Student Stress Levels Research Design",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                Designed a research framework to explore the relationship between UCSD students' academic workload and their music preferences, utilitizing Spotify API's 'Top Tracks This Month' and emotional tone metrics (valence) with student stress surveys to quantify music preference and valence shifts during exam season\n            "
     },
     {
-        "title": "Job Satisfaction Analysis - Team Lead\n                Jan. 2025 - March 2025\n            ",
+        "title": "Job Satisfaction Analysis - Team Lead",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "images/job-analysis-proj-img.png",
         "description": "\n                Odio totam atque sed cumque quaerat laudantium quos soluta. Hic obcaecati quisquam tenetur dignissimos voluptatem impedit, explicabo deleniti? Nihil reiciendis maiores est aut debitis commodi, tempore non voluptas fugiat ex!"
     },
     {
-        "title": "Project 3.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Suscipit asperiores earum facilis dicta, repellendus magnam placeat repudiandae doloremque assumenda tempora voluptatum officia, excepturi impedit sunt eaque fugiat deleniti recusandae at quis quia? Minima numquam ipsam voluptate consequatur quibusdam."
+        "title": "Grocery Store Data Visualization",
+        "year": "2025",
+        "image": "images/106-proj-1.png",
+        "description": "Design a static visualization that effectively communicates an idea about the data."
     },
     {
-        "title": "Project 4.",
+        "title": "Power Outages: An Analysis and Prediction Model",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Deleniti, quia obcaecati! Ullam veniam ex dolore ratione soluta tempore perferendis laboriosam eos culpa voluptatum quos vitae saepe et distinctio accusantium in, porro tempora ipsa eaque illum deserunt aliquam qui."
     },
     {
-        "title": "Ea quibusdam iure sequi.",
+        "title": "Raspberry Shake Seismic Research",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Officia vero sequi nostrum sint cupiditate quo nulla aut exercitationem, tempore beatae illum maiores libero totam dicta doloribus amet numquam ullam accusantium quaerat? Perferendis distinctio id dolore soluta amet aut."
     },
     {
-        "title": "Doloribus itaque aut ipsum?",
+        "title": "Ice Man Game",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Odio totam atque sed cumque quaerat laudantium quos soluta. Hic obcaecati quisquam tenetur dignissimos voluptatem impedit, explicabo deleniti? Nihil reiciendis maiores est aut debitis commodi, tempore non voluptas fugiat ex!"
     },
     {
         "title": "Asperiores harum quibusdam error.",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Est veniam iure asperiores debitis quia minima suscipit ad deserunt quos? Dolorum adipisci inventore, unde sunt rem minus nam. Vero molestias inventore rerum cum aspernatur totam iusto iste impedit illum."
     },
     {
         "title": "Molestias sapiente ea ab.",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Fugit aliquid illum quaerat officiis sequi. Iusto delectus provident facere optio nulla. Dolorum voluptatum rerum distinctio alias molestias, inventore, nostrum dignissimos deleniti voluptates sunt praesentium incidunt neque, expedita perspiciatis? Similique."
     },
     {
         "title": "Illo ipsa culpa deserunt?",
+        "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Eligendi tenetur, voluptate eius veniam iusto maxime quas quae laudantium nesciunt molestiae magni provident unde itaque nostrum natus ad qui inventore rem dolorem corrupti rerum repellat vitae et. Dolor, repudiandae."
     },
     {
         "title": "Quam, quisquam facilis! Unde!",
+        "year": "2020",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Praesentium dolores optio velit excepturi laborum quos ipsam officia, voluptatem amet assumenda consectetur. Voluptatem dolor molestiae sapiente eveniet pariatur corrupti quia deleniti rerum odit! Blanditiis natus ipsa recusandae itaque? Dolor!"
     },
     {
         "title": "Recusandae soluta nobis ad!",
+        "year": "2020",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Nostrum officiis enim quasi nemo nihil asperiores quaerat autem et delectus cumque voluptates tempore, earum repellat perferendis est debitis porro culpa quas labore fugiat rerum illum commodi velit animi. Necessitatibus!"
     },
     {
         "title": "Accusamus libero optio sapiente?",
+        "year": "2019",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Doloremque, inventore ullam. Nam, porro qui. Vitae expedita ad fuga, sequi error cupiditate earum nostrum voluptatum eaque blanditiis omnis quisquam accusantium. Impedit quas sint amet nobis cum fugit doloremque expedita?"
     }
