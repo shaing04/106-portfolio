@@ -179,6 +179,25 @@ form label {
   position: static;
 }
 
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 0.5rem; 
+  text-align: center; 
+  margin-top: 1rem;
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  grid-row: 1; 
+}
+
+#profile-stats dd {
+  margin: 0;
+  grid-row: 2; 
+}
+
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
