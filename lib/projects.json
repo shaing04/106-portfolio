@@ -8,13 +8,13 @@
     {
         "title": "Job Satisfaction Analysis - Team Lead",
         "year": "2025",
-        "image": "../images/job-analysis-proj-img.png",
+        "image": "s/images/job-analysis-proj-img.png",
         "description": "\n                Odio totam atque sed cumque quaerat laudantium quos soluta. Hic obcaecati quisquam tenetur dignissimos voluptatem impedit, explicabo deleniti? Nihil reiciendis maiores est aut debitis commodi, tempore non voluptas fugiat ex!"
     },
     {
         "title": "Grocery Store Data Visualization",
         "year": "2025",
-        "image": "../images/106-proj-1.png",
+        "image": "/images/106-proj-1.png",
         "description": "Design a static visualization that effectively communicates an idea about the data."
     },
     {
