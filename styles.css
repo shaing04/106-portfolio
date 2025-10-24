@@ -193,12 +193,14 @@ form label {
   font-size: 100%;
   color: #4e567b;
   grid-row: 1; 
+  text-align: left;
 }
 
 #profile-stats dd {
   margin: 0;
   grid-row: 2; 
-  font-size: 160%
+  font-size: 160%;
+  text-align: left;
 }
 
 
