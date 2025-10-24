@@ -135,14 +135,9 @@ form button {
   display: block;
 }
 
-#home-projects {
-  margin: 3rem 0;
+.projects {
+  margin: 2rem 0; 
 }
-
-#home-projects article {
-  margin: 1rem;
-}
-
 
 .header-info, .education, .work { 
   margin-bottom: 1em;
