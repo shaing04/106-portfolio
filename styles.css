@@ -185,10 +185,12 @@ form label {
   gap: 0.5rem; 
   text-align: center; 
   margin-top: 1rem;
+  border: 5px;
 }
 
 #profile-stats dt {
   font-weight: bold;
+  font-size: 10;
   grid-row: 1; 
 }
 
