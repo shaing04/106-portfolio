@@ -70,10 +70,10 @@ export async function fetchGitHubData(username) {
 const container = document.querySelector('.projects');
 const title = document.querySelector('.projects-title');
 
-fetchJSON('../lib/projects.json').then((projects) => {
+fetchJSON(`${BASE_PATH}lib/projects.json`).then((projects) => {
   renderProjects(projects, container);
   if (title) {
-    title.textContent = `(${projects.length}) Projects`;
+    title.textContent = `${projects.length} Projects`;
   }
 });
 
