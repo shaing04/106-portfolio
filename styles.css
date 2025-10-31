@@ -118,8 +118,9 @@ form button {
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1em; /* space between articles */
+  gap: 1em; 
   margin: 1em 0;
+  align-items: stretch;
 }
 
 .projects article {
@@ -139,9 +140,39 @@ form button {
   display: block;
 }
 
-.projects {
-  margin: 2rem 0; 
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;         
 }
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;         
+}
+
+.project-year {
+  margin-top: auto;     
+  font-style: italic;
+  color: gray;
+  font-size: 0.9em;
+  align-self: flex-start;
+}
+
+.projects > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects > * > .project-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 
 .header-info, .education, .work { 
   margin-bottom: 1em;
@@ -211,6 +242,69 @@ form label {
   text-align: left;
 }
 
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+
+}
+
+
+.container {
+  display: flex;  
+  gap: 2em;
+  align-items: flex-start
+}
+
+.container svg {
+  width: 200px;            
+  height: auto;
+  flex: 1 1 auto;          
+}
+
+.legend-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em;
+  flex: 1 1 auto;          
+  min-width: 150px;         
+  border-radius: 1em;
+  border: 1px solid oklch(21.374% 0.01327 204.787 / 0.4);
+  padding: 0.5em;
+}
+
+.legend-ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.legend-ul li .swatch {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
 
 body {
   /* Set line height to 1.5 times the font size

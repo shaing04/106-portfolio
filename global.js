@@ -1,5 +1,5 @@
 // global.js
-console.log('js 2 test 17')
+console.log('d3 test 1')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -51,14 +51,22 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     const heading = document.createElement(headingLevel);
     const img = document.createElement('img');
-    const p = document.createElement('p');
+    const description = document.createElement('p');
+    const year = document.createElement('p');
 
     heading.textContent = project.title;
     img.src = project.image || '';
     img.alt = project.title || 'Project image';
-    p.textContent = project.description || '';
+    description.textContent = project.description || '';
+    year.textContent = `c. ${project.year}` || '';
 
-    article.append(heading, img, p);
+    year.classList.add('project-year');
+
+    const infoWrapper = document.createElement('div');
+    infoWrapper.classList.add('project-info'); 
+    infoWrapper.append(description, year);
+
+    article.append(heading, img, infoWrapper);
 
     containerElement.appendChild(article);
   });
