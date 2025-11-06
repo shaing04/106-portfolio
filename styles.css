@@ -306,7 +306,29 @@ path {
   }
 }
 
+#stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 0.5rem; 
+  text-align: center; 
+  margin-top: 1rem;
+  border: 5px;
+}
 
+#stats dt {
+  font-weight: normal;
+  font-size: 100%;
+  color: #4e567b;
+  grid-row: 1; 
+  text-align: left;
+}
+
+#stats dd {
+  margin: 0;
+  grid-row: 2; 
+  font-size: 160%;
+  text-align: left;
+}
 
 
 body {
