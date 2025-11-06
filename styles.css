@@ -330,6 +330,15 @@ path {
   text-align: left;
 }
 
+.gridlines line { 
+  stroke: #b4aeae;
+  stroke-opacity: 0.5;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path { 
+  stroke: none;
+}
 
 body {
   /* Set line height to 1.5 times the font size
