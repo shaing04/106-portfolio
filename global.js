@@ -96,9 +96,11 @@ let pages = [
   { url: 'projects/', title: 'Projects' },
   { url: 'resume/', title: 'Resume'},
   { url: 'contact/', title: 'Contact'}, 
+  { url: 'meta/', title: 'Meta'},
   { url: 'https://github.com/shaing04', title: 'GitHub'},
   { url: 'https://www.linkedin.com/in/susana-haing/', title: 'LinkedIn'}
   // add the rest of your pages here
+
 ];
 
 let nav = document.createElement('nav');

@@ -416,6 +416,12 @@ circle {
   fill-opacity: 0.7;
 }
 
+#language-breakdown { 
+  display: grid; 
+  grid-template-columns: auto 1fr;
+}
+
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
