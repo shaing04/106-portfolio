@@ -1,5 +1,5 @@
 // global.js
-console.log('d3 test 1')
+console.log('lab 6 complete')
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
