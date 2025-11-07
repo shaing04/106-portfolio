@@ -340,6 +340,77 @@ path {
   stroke: none;
 }
 
+
+dl.info { 
+  display: grid; 
+  grid-template-columns: auto 1fr; 
+  column-gap: 1rem; 
+  row-gap: 0.4rem; 
+  align-items: center;
+  margin: 0; 
+  padding: 0; 
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dt.info {
+  font-weight: normal;
+  font-size: 100%;
+  color: #4e567b;
+  grid-row: 1; 
+  text-align: left;
+}
+
+dd.info {
+  margin: 0;
+  grid-row: 2; 
+  font-size: 160%;
+  text-align: left;
+}
+
+#commit-tooltip { 
+  position: fixed; 
+  top: 1em; 
+  left: 1em; 
+  background-color: white; 
+  box-shadow: oklch(73.696% 0.01582 202.28);
+  border-radius: 10px; 
+  padding: 1em;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
