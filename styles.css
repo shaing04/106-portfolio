@@ -411,6 +411,11 @@ circle.selected {
   fill: #ff6b6b;
 }
 
+circle {
+  fill: #4e79a7;
+  fill-opacity: 0.7;
+}
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
