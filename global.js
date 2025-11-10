@@ -18,7 +18,7 @@ function $$(selector, context = document) {
 export const BASE_PATH =
   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? '/' // Local server
-    : '/106-portfolio/'; // GitHub Pages repo name
+    : '/portfolio/'; // GitHub Pages repo name
 
 export async function fetchJSON(url) {
   try {
