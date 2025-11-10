@@ -1,5 +1,5 @@
 // global.js
-console.log('lab 6 complete')
+console.log('lab 6 complete');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -15,10 +15,10 @@ function $$(selector, context = document) {
 
 // currentLink?.classList.add("current");
 
-export const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"                  // Local server
-  : "/106-portfolio/";         // GitHub Pages repo name
-
+export const BASE_PATH =
+  location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? '/' // Local server
+    : '/106-portfolio/'; // GitHub Pages repo name
 
 export async function fetchJSON(url) {
   try {
@@ -36,7 +36,11 @@ export async function fetchJSON(url) {
   }
 }
 
-export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+export function renderProjects(
+  projects,
+  containerElement,
+  headingLevel = 'h2',
+) {
   // heading levels
   const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
   if (!headings.includes(headingLevel)) {
@@ -53,6 +57,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const img = document.createElement('img');
     const description = document.createElement('p');
     const year = document.createElement('p');
+    const link = document.createElement('a');
 
     heading.textContent = project.title;
     img.src = project.image || '';
@@ -62,9 +67,17 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     year.classList.add('project-year');
 
+    if (project.url && project.url !== 'temp') {
+      link.href = project.url;
+      link.textContent = 'Project Link';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.classList.add('project-link');
+    }
+
     const infoWrapper = document.createElement('div');
-    infoWrapper.classList.add('project-info'); 
-    infoWrapper.append(description, year);
+    infoWrapper.classList.add('project-info');
+    infoWrapper.append(description, year, link);
 
     article.append(heading, img, infoWrapper);
 
@@ -75,10 +88,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 export async function fetchGitHubData(username) {
   // return statement here
   return fetchJSON(`https://api.github.com/users/${username}`);
-
 }
-
-
 
 const container = document.querySelector('.projects');
 const title = document.querySelector('.projects-title');
@@ -90,17 +100,15 @@ fetchJSON(`${BASE_PATH}lib/projects.json`).then((projects) => {
   }
 });
 
-
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
-  { url: 'resume/', title: 'Resume'},
-  { url: 'contact/', title: 'Contact'}, 
-  { url: 'meta/', title: 'Meta'},
-  { url: 'https://github.com/shaing04', title: 'GitHub'},
-  { url: 'https://www.linkedin.com/in/susana-haing/', title: 'LinkedIn'}
+  { url: 'resume/', title: 'Resume' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'meta/', title: 'Meta' },
+  { url: 'https://github.com/shaing04', title: 'GitHub' },
+  { url: 'https://www.linkedin.com/in/susana-haing/', title: 'LinkedIn' },
   // add the rest of your pages here
-
 ];
 
 let nav = document.createElement('nav');
@@ -123,8 +131,8 @@ for (let p of pages) {
 
   // open external links in a new tab
   if (a.host !== location.host) {
-    a.target = "_blank";            
-    a.rel = "noopener noreferrer";  
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
   }
 
   nav.append(a);
@@ -145,11 +153,11 @@ document.body.insertAdjacentHTML(
 
 const select = document.querySelector('#color-scheme');
 
-if ("colorScheme" in localStorage) {
+if ('colorScheme' in localStorage) {
   const savedScheme = localStorage.colorScheme;
   select.value = savedScheme;
-  if (savedScheme === "auto") {
-    document.documentElement.style.colorScheme = "light dark";
+  if (savedScheme === 'auto') {
+    document.documentElement.style.colorScheme = 'light dark';
   } else {
     document.documentElement.style.colorScheme = savedScheme;
   }
@@ -159,13 +167,11 @@ select.addEventListener('input', function (event) {
   const value = event.target.value;
   console.log('color scheme changed to', value);
   document.documentElement.style.setProperty('color-scheme', value);
-  localStorage.colorScheme = value
+  localStorage.colorScheme = value;
 
-  if (value === 'auto') { 
+  if (value === 'auto') {
     document.documentElement.style.colorScheme = 'light dark';
-
-  }
-  else { 
+  } else {
     document.documentElement.style.colorScheme = value;
   }
 });
