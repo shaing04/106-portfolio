@@ -110,7 +110,7 @@ function renderCommitInfo(data, commits) {
 
 //renderCommitInfo(data, commits);
 
-function renderScatterPlot(data, commits) {
+export function renderScatterPlot(data, commits) {
   // put all the JS code of steps inside this function
   const width = 1000;
   const height = 600;
@@ -121,12 +121,23 @@ function renderScatterPlot(data, commits) {
   const svg = d3
     .select('#chart')
     .append('svg')
+    .attr('id', 'chart-svg') // ADD THIS LINE
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('overflow', 'visible');
 
+  const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+
+  const usableArea = {
+    top: margin.top,
+    right: width - margin.right,
+    bottom: height - margin.bottom,
+    left: margin.left,
+    width: width - margin.left - margin.right,
+    height: height - margin.top - margin.bottom,
+  };
+
   xScale = d3
     .scaleTime()
-
     //points were overlapping with the y axis
     .domain([
       d3.timeDay.offset(
@@ -143,17 +154,6 @@ function renderScatterPlot(data, commits) {
 
   yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
 
-  const margin = { top: 10, right: 10, bottom: 30, left: 20 };
-
-  const usableArea = {
-    top: margin.top,
-    right: width - margin.right,
-    bottom: height - margin.bottom,
-    left: margin.left,
-    width: width - margin.left - margin.right,
-    height: height - margin.top - margin.bottom,
-  };
-
   // Update scales with new ranges
   xScale.range([usableArea.left, usableArea.right]);
   yScale.range([usableArea.bottom, usableArea.top]);
@@ -164,7 +164,6 @@ function renderScatterPlot(data, commits) {
     .attr('class', 'gridlines')
     .attr('transform', `translate(${usableArea.left}, 0)`);
 
-  // Create gridlines as an axis with no labels and full-width ticks
   gridlines.call(
     d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width),
   );
@@ -177,20 +176,18 @@ function renderScatterPlot(data, commits) {
   // Add X axis
   svg
     .append('g')
+    .attr('class', 'x-axis') // ADD CLASS for updates
     .attr('transform', `translate(0, ${usableArea.bottom})`)
     .call(xAxis);
 
-  // Add Y axis
   svg
     .append('g')
+    .attr('class', 'y-axis')
     .attr('transform', `translate(${usableArea.left}, 0)`)
     .call(yAxis);
 
   const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
-  const rScale = d3
-    .scaleSqrt() // Change only this line
-    .domain([minLines, maxLines])
-    .range([5, 30]);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([5, 30]);
 
   const brushLayer = svg.append('g').attr('class', 'brush');
   const dots = svg.append('g').attr('class', 'dots');
@@ -198,8 +195,6 @@ function renderScatterPlot(data, commits) {
   dots
     .selectAll('circle')
     .data(sortedCommits)
-    .join('circle')
-    .data(commits)
     .join('circle')
     .attr('cx', (d) => xScale(d.date))
     .attr('cy', (d) => yScale(d.hourFrac))
@@ -218,6 +213,60 @@ function renderScatterPlot(data, commits) {
     });
 
   createBrushSelector(brushLayer);
+}
+
+export function updateScatterPlot(data, commits) {
+  const width = 1000;
+  const height = 600;
+  const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+  const usableArea = {
+    top: margin.top,
+    right: width - margin.right,
+    bottom: height - margin.bottom,
+    left: margin.left,
+    width: width - margin.left - margin.right,
+    height: height - margin.top - margin.bottom,
+  };
+
+  // FIX: Select the SVG by ID instead of nested selection
+  const svg = d3.select('#chart-svg');
+
+  // FIX: Update the existing xScale domain (don't reassign)
+  xScale.domain(d3.extent(commits, (d) => d.datetime)).nice();
+
+  const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
+
+  const xAxis = d3.axisBottom(xScale);
+
+  // remove the old x-axis code, then replace with:
+  const xAxisGroup = svg.select('g.x-axis');
+  xAxisGroup.selectAll('*').remove();
+  xAxisGroup.call(xAxis);
+
+  // FIX: Select the dots group
+  const dots = svg.select('.dots');
+
+  const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+  dots
+    .selectAll('circle')
+    .data(sortedCommits)
+    .join('circle')
+    .attr('cx', (d) => xScale(d.date))
+    .attr('cy', (d) => yScale(d.hourFrac))
+    .attr('r', (d) => rScale(d.totalLines))
+    .attr('fill', 'steelblue')
+    .style('fill-opacity', 0.7)
+    .on('mouseenter', (event, commit) => {
+      d3.select(event.currentTarget).style('fill-opacity', 1);
+      renderTooltipContent(commit);
+      updateTooltipVisibility(true);
+      updateTooltipPosition(event);
+    })
+    .on('mouseleave', (event) => {
+      d3.select(event.currentTarget).style('fill-opacity', 0.7);
+      updateTooltipVisibility(false);
+    });
 }
 
 function renderTooltipContent(commit) {
@@ -335,4 +384,6 @@ renderScatterPlot(data, commits);
 
 renderTooltipContent(commits);
 
+//  export so meta.js can use
+export { commits, data };
 //console.log(data[0].date, data[0].datetime);

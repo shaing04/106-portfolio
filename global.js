@@ -41,6 +41,11 @@ export function renderProjects(
   containerElement,
   headingLevel = 'h2',
 ) {
+  if (!containerElement) {
+    console.warn('Container element not found, skipping project rendering');
+    return;
+  }
+
   // heading levels
   const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
   if (!headings.includes(headingLevel)) {
@@ -94,7 +99,11 @@ const container = document.querySelector('.projects');
 const title = document.querySelector('.projects-title');
 
 fetchJSON(`${BASE_PATH}lib/projects.json`).then((projects) => {
-  renderProjects(projects, container);
+  if (container) {
+    renderProjects(projects, container);
+  } else {
+    console.log('No projects container found on this page');
+  }
   if (title) {
     title.textContent = `${projects.length} Projects`;
   }

@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meta</title>
     <link rel="stylesheet" href="../styles.css" />
     <script src="main.js" type="module" defer></script>
+    <script src="meta.js" type="module" defer></script>
     <script src="../global.js" type="module"></script>
-</head>
-<body> 
+  </head>
+  <body>
     <h2><strong>Summary</strong></h2>
+    <div id="slider-container">
+      <div class="slider-row">
+        <label for="commit-progress"> Show commits until: </label>
+        <input
+          type="range"
+          id="commit-progress"
+          min="0"
+          max="100"
+          value="100"
+        />
+      </div>
+      <time id="commit-max-time"></time>
+    </div>
+
     <div id="stats"></div>
 
     <h2>Commits by time of day</h2>
     <div id="chart"></div>
 
     <dl id="commit-tooltip" class="info" hidden>
-        <dt>Commit</dt>
-        <dd>
-            <a href="" id="commit-link" target="_blank"></a>
-        </dd>
+      <dt>Commit</dt>
+      <dd>
+        <a href="" id="commit-link" target="_blank"></a>
+      </dd>
 
-        <dt>Date</dt>
-        <dd id="commit-date"></dd>
+      <dt>Date</dt>
+      <dd id="commit-date"></dd>
 
-        <!-- Add: Time, author, lines edited -->
-        <dt>Time</dt>
-        <dd id="commit-time"></dd>
+      <!-- Add: Time, author, lines edited -->
+      <dt>Time</dt>
+      <dd id="commit-time"></dd>
 
-        <dt>Author</dt>
-        <dd id="commit-author"></dd>
+      <dt>Author</dt>
+      <dd id="commit-author"></dd>
 
-        <dt>Lines Edited</dt>
-        <dd id="commit-lines-edited"></dd>
-
+      <dt>Lines Edited</dt>
+      <dd id="commit-lines-edited"></dd>
     </dl>
 
     <p id="selection-count">No commits selected</p>
 
     <dl id="language-breakdown" class="stats"></dl>
-
-</body>
-
+  </body>
 </html>
