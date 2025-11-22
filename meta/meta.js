@@ -93,7 +93,7 @@ if (slider) {
 // initial render
 filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
 updateScatterPlot(data, filteredCommits);
-updateFileDisplay(filteredCommits);
+updateFileDisplay([commits[0]]);
 
 // Render steps for scrollytelling
 d3.select('#scatter-story')
