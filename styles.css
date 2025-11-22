@@ -451,22 +451,15 @@ circle:hover {
   }
 }
 
-#files dt small {
-  display: block;
-  opacity: 0.6;
-  font-size: 0.8em;
-  margin-top: 0.15em;
-}
-
 .loc {
   display: flex;
   width: 0.5em;
   aspect-ratio: 1;
-  background: steelblue;
+  background: var(--color);
   border-radius: 50%;
 }
 
-dd {
+#files dd {
   grid-column: 2;
   display: flex;
   flex-wrap: wrap;
@@ -475,6 +468,91 @@ dd {
   gap: 0.15em;
   padding-top: 0.6em;
   margin-left: 0;
+}
+
+#files dt small {
+  display: block;
+  opacity: 0.6;
+  font-size: 0.8em;
+  margin-top: 0.15em;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: sticky;
+  left: 0;
+  bottom: auto;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  /* left: 0; */
+  bottom: auto;
+  height: 50vh;
+}
+
+#slider-container {
+  display: none;
+}
+
+/* Container for the two-column layout */
+#meta-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left column: scatter plot + file dots */
+#visuals {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 1rem; /* keep visuals visible when scrolling steps */
+}
+
+/* Right column: scrollytelling steps */
+#steps-container {
+  flex: 1;
+  max-height: 80vh;
+  overflow-y: auto; /* scrollable steps */
+  padding-left: 1rem;
+}
+
+.meta-row {
+  display: flex;
+  gap: 2rem; /* space between history and visualization */
+}
+
+.history-column {
+  flex: 1; /* scrollable text */
+}
+
+.visual-column {
+  flex: 1; /* sticky visualization */
+}
+
+#file-visuals {
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  height: 50vh;
 }
 
 @keyframes marching-ants {
