@@ -32,6 +32,39 @@ function onTimeSliderChange() {
 
   filteredCommits = commits.filter((d) => d.date <= commitMaxTime);
   updateScatterPlot(data, filteredCommits);
+
+  // after initializing filteredCommits
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    });
+
+  let filesContainer = d3
+    .select('#files')
+    .selectAll('div')
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter.append('div').call((div) => {
+        const dt = div.append('dt');
+        dt.append('code');
+        dt.append('small');
+        div.append('dd');
+      }),
+    );
+
+  // This code updates the div info
+  filesContainer.select('dt > code').text((d) => d.name);
+
+  filesContainer.select('dt > small').html((d) => `${d.lines.length} lines`);
+
+  filesContainer
+    .select('dd')
+    .selectAll('div')
+    .data((d) => d.lines)
+    .join('div')
+    .attr('class', 'loc');
 }
 
 const slider = document.getElementById('commit-progress');
