@@ -32,14 +32,13 @@ function updateFileDisplay(filteredCommits) {
   let files = d3
     .groups(lines, (d) => d.file)
     .map(([name, lines]) => ({ name, lines }))
-    .sort((a, b) => b.lines.length - a.lines.length);
+    .sort((a, b) => b.lines.length - a.lines.length); // descending by line count
 
   let filesContainer = d3
     .select('#files')
     .selectAll('div')
     .data(files, (d) => d.name);
 
-  // ENTER: add new file divs only if not present
   const filesEnter = filesContainer
     .enter()
     .append('div')
@@ -50,29 +49,22 @@ function updateFileDisplay(filteredCommits) {
       div.append('dd');
     });
 
-  // MERGE: update text for all files
-  filesContainer
-    .merge(filesEnter)
-    .select('dt > code')
-    .text((d) => d.name);
+  const filesMerged = filesContainer.merge(filesEnter);
 
-  filesContainer
-    .merge(filesEnter)
-    .select('dt > small')
-    .html((d) => `${d.lines.length} lines`);
-
-  // Update lines (LOC dots)
-  filesContainer
-    .merge(filesEnter)
+  filesMerged.select('dt > code').text((d) => d.name);
+  filesMerged.select('dt > small').html((d) => `${d.lines.length} lines`);
+  filesMerged
     .select('dd')
     .selectAll('div')
     .data((d) => d.lines)
     .join(
       (enter) => enter.append('div').attr('class', 'loc'),
-      (update) => update, // keep existing dots
-      (exit) => exit.remove(), // remove dots when shrinking
+      (update) => update,
+      (exit) => exit.remove(),
     )
     .attr('style', (d) => `--color: ${colors(d.type)}`);
+
+  filesMerged.order();
 }
 
 const slider = document.getElementById('commit-progress');

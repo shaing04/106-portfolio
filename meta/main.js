@@ -231,6 +231,17 @@ export function updateScatterPlot(data, commits) {
   // FIX: Select the SVG by ID instead of nested selection
   const svg = d3.select('#chart-svg');
 
+  // Add clipPath to limit circles inside plot
+  svg
+    .append('defs')
+    .append('clipPath')
+    .attr('id', 'scatter-clip')
+    .append('rect')
+    .attr('x', usableArea.left)
+    .attr('y', usableArea.top)
+    .attr('width', usableArea.width)
+    .attr('height', usableArea.height);
+
   // FIX: Update the existing xScale domain (don't reassign)
   xScale.domain(d3.extent(commits, (d) => d.datetime)).nice();
 
@@ -244,8 +255,10 @@ export function updateScatterPlot(data, commits) {
   xAxisGroup.selectAll('*').remove();
   xAxisGroup.call(xAxis);
 
-  // FIX: Select the dots group
-  const dots = svg.select('.dots');
+  const dots = svg
+    .select('.dots')
+    .attr('class', 'dots')
+    .attr('clip-path', 'url(#scatter-clip)');
 
   const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
   dots
